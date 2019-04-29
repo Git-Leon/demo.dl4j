@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import org.omg.CORBA.TRANSACTION_REQUIRED;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

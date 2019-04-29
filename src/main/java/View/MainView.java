@@ -1,14 +1,13 @@
 package View;
 
-import Presentation.MainView.IMainView;
-import Presentation.MainView.IMainViewPresenter;
+import presentation.mainview.IMainView;
+import presentation.mainview.IMainViewPresenter;
 import View.Controls.FaceControlView;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import javax.swing.text.html.ListView;
 import java.io.File;
 
 public class MainView implements IMainView {

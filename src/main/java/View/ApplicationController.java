@@ -1,9 +1,8 @@
 package View;
 
-import Presentation.IApplicationController;
-import Presentation.MainView.IMainViewPresenter;
-import Presentation.MainView.MainViewPresenter;
-import View.Controls.FaceControlView;
+import presentation.IApplicationController;
+import presentation.mainview.IMainViewPresenter;
+import presentation.mainview.MainViewPresenter;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
