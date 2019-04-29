@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f0987f8-a416-4420-94e1-be7ba7e6b19c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTaskBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/vpFace_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/vpFace_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/vpFace_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/vpFace_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Core/BaseTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Core/BaseTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Core/Math/EuclideanDistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Core/Math/EuclideanDistance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Core/Tasks/CreateInputVectorTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Core/Tasks/CreateInputVectorTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Core/Tasks/ExtractFacesFromImageTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Core/Tasks/ExtractFacesFromImageTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/IApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Presentation/IApplicationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/IPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Presentation/IPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Presentation/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/IMainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/IMainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/IMainViewPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/IMainViewPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/MainViewPresenter$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/MainViewPresenter$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/MainViewPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Presentation/MainView/MainViewPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Presentation/Models/PersonModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Presentation/Models/PersonModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/View/ApplicationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/View/Controls/Events/IOnRecognizeEventListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/View/Controls/Events/IOnTrainEventListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/View/Controls/FaceControlView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/View/MainView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Controls/Events/IOnRecognizeEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/controls/events/IOnRecognizeEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Controls/Events/IOnTrainEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/controls/events/IOnTrainEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Controls/FaceControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/controls/FaceControlView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/tasks/CreateInputVectorTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/tasks/CreateInputVectorTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/mainview/IMainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/mainview/IMainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/presentation/mainview/MainViewPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/mainview/MainViewPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/models/PersonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/models/PersonModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -71,7 +31,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="java" value="47" />
+          <entry key="java" value="50" />
           <entry key="jpg" value="4" />
         </counts>
       </usages-collector>
@@ -79,19 +39,19 @@
         <counts>
           <entry key="Groovy" value="2" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="47" />
+          <entry key="JAVA" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="30" />
-          <entry key="java" value="470" />
+          <entry key="java" value="502" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="30" />
-          <entry key="JAVA" value="470" />
+          <entry key="JAVA" value="502" />
         </counts>
       </usages-collector>
     </session>
@@ -101,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/ApplicationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="225">
+              <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
               <folding>
                 <element signature="e#392#393#0" expanded="true" />
                 <element signature="e#430#431#0" expanded="true" />
@@ -114,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-181">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="279">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,26 +86,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/presentation/mainview/IMainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/mainview/MainViewPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+            <state relative-caret-position="120">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/mainview/MainViewPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="54" column="78" lean-forward="true" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/views/controls/FaceControlView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+              <folding>
+                <element signature="e#964#965#0" expanded="true" />
+                <element signature="e#1013#1014#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTask.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="155">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,24 +131,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="367">
               <caret line="67" selection-start-line="67" selection-end-line="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/IPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/presentation/IApplicationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -632,14 +587,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vpFace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo.dl4j" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="presentation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -657,6 +604,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="presentation" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vpFace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo.dl4j" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -667,7 +623,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556564384903" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556564576643" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -713,8 +669,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -724,14 +681,14 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3299363" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3299363" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3299363" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -774,20 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openpnp/opencv/3.2.0-1/406def083d4bef21da43db4bf25c944a3d6092ae/opencv-3.2.0-1-sources.jar!/org/opencv/objdetect/CascadeClassifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1457">
-          <caret line="146" column="34" lean-forward="true" selection-start-line="146" selection-start-column="34" selection-end-line="146" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/javafx-src.zip!/javafx/stage/FileChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -881,21 +824,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/ApplicationController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTaskBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding>
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="367">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="279">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openpnp/opencv/3.2.0-1/406def083d4bef21da43db4bf25c944a3d6092ae/opencv-3.2.0-1-sources.jar!/org/opencv/objdetect/CascadeClassifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="181" column="34" lean-forward="true" selection-start-line="181" selection-start-column="34" selection-end-line="181" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -904,14 +860,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/presentation/mainview/IMainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="120">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/views/controls/FaceControlView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-481">
+        <state relative-caret-position="15">
           <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
           <folding>
             <element signature="e#964#965#0" expanded="true" />
@@ -920,27 +876,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/javafx-src.zip!/javafx/stage/FileChooser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+          <folding>
+            <element signature="e#7866#7867#0" expanded="true" />
+            <element signature="e#7919#7920#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/ApplicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/presentation/mainview/MainViewPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTaskBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/tasks/ExtractFacesFromImageTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="54" column="78" lean-forward="true" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
         </state>
       </provider>
     </entry>
