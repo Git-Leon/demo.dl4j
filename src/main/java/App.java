@@ -1,5 +1,5 @@
 import presentation.IApplicationController;
-import View.ApplicationController;
+import views.ApplicationController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

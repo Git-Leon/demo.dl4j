@@ -4,7 +4,6 @@ import org.datavec.image.loader.NativeImageLoader;
 import org.deeplearning4j.nn.graph.ComputationGraph;
 import org.deeplearning4j.nn.transferlearning.TransferLearningHelper;
 import org.deeplearning4j.zoo.PretrainedType;
-import org.deeplearning4j.zoo.ZooModel;
 import org.deeplearning4j.zoo.model.VGG16;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
@@ -21,23 +20,14 @@ public class CreateInputVectorTask {
     private TransferLearningHelper transferLearningHelper;
     private NativeImageLoader nativeImageLoader;
     private DataNormalization scaler;
-
     private Boolean isInitialized = false;
 
     public CreateInputVectorTask() {
-        try {
-            System.out.println("Loading DL4J");
-            ZooModel objZooModel = new VGG16();
-            ComputationGraph objComputationGraph = null;
-            objComputationGraph = (ComputationGraph) objZooModel.initPretrained(PretrainedType.VGGFACE);
-            System.out.println("Loaded DL4J");
-            transferLearningHelper = new TransferLearningHelper(objComputationGraph, "pool4");
-            nativeImageLoader = new NativeImageLoader(224, 224, 3);
-            scaler = new VGG16ImagePreProcessor();
-            isInitialized = true;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        transferLearningHelper = new TransferLearningHelper(getObjComputationGraph(), "pool4");
+        nativeImageLoader = new NativeImageLoader(224, 224, 3);
+        scaler = new VGG16ImagePreProcessor();
+        isInitialized = true;
+
     }
 
     public double[] runTask(File faceImageFile) {
@@ -45,31 +35,46 @@ public class CreateInputVectorTask {
 
         this.faceImageFile = faceImageFile;
 
-        try {
-            INDArray imageMatrix = nativeImageLoader.asMatrix(this.faceImageFile);
-            scaler.transform(imageMatrix);
+        INDArray imageMatrix = getImageMatrix();
+        scaler.transform(imageMatrix);
+        DataSet objDataSet = new DataSet(imageMatrix, Nd4j.create(new float[]{0, 0}));
 
-            DataSet objDataSet = new DataSet(imageMatrix, Nd4j.create(new float[]{0, 0}));
+        DataSet objFeaturized = transferLearningHelper.featurize(objDataSet);
+        INDArray featuresArray = objFeaturized.getFeatures();
 
-            DataSet objFeaturized = transferLearningHelper.featurize(objDataSet);
-            INDArray featuresArray = objFeaturized.getFeatures();
-
-            int reshapeDimension = 1;
-            for (int dimension : featuresArray.shape()) {
-                reshapeDimension *= dimension;
-            }
-
-            featuresArray = featuresArray.reshape(1, reshapeDimension);
-
-            result = featuresArray.data().asDouble();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        int reshapeDimension = 1;
+        for (int dimension : featuresArray.shape()) {
+            reshapeDimension *= dimension;
         }
+
+        featuresArray = featuresArray.reshape(1, reshapeDimension);
+
+        result = featuresArray.data().asDouble();
+
         return result;
     }
-
 
     public double[] getResult() {
         return result;
     }
+
+    private ComputationGraph getObjComputationGraph() {
+        try {
+            PretrainedType pretrainedType = PretrainedType.VGGFACE;
+            VGG16 vgg16 = new VGG16();
+            ComputationGraph computationGraph = (ComputationGraph) vgg16.initPretrained(pretrainedType);
+            return computationGraph;
+        } catch (IOException e) {
+            throw new Error(e);
+        }
+    }
+
+    private INDArray getImageMatrix() {
+        try {
+            return nativeImageLoader.asMatrix(this.faceImageFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

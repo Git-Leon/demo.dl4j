@@ -1,4 +1,4 @@
-package View.Controls.Events;
+package views.controls.events;
 
 import java.io.File;
 

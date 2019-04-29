@@ -1,6 +1,7 @@
 package core.tasks;
 
 import core.BaseTask;
+import nu.pattern.OpenCV;
 import presentation.IApplicationController;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
@@ -14,75 +15,63 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExtractFacesFromImageTask extends BaseTask<List<File>> {
-  private File _imageFilePath;
-  private File _haarFile;
-  private File _tempFolder;
-  private double _scaleFactor;
-  private int _minNeighbours;
-  private Size _minFaceSize;
-  private Size _maxFaceSize;
+    private File imageFilePath;
+    private File haarFile;
+    private File tempFolder;
+    private double scaleFactor;
+    private int minNeighbours;
+    private Size minFaceSize;
+    private Size maxFaceSize;
 
-  private CascadeClassifier _classifier;
+    private CascadeClassifier classifier;
 
-  private boolean _initialized=false;
+    private boolean initialized = false;
 
-  public ExtractFacesFromImageTask(String taskName, IApplicationController applicationController,
-                                   File imageFilePath, File haarFile, File tempFolder,
-                                   double scaleFactor, int minNeighbours, Size minFaceSize, Size maxFaceSize) {
-    super(taskName, applicationController);
+    ExtractFacesFromImageTask(String taskName, IApplicationController applicationController,
+                              File imageFilePath, File haarFile, File tempFolder,
+                              double scaleFactor, int minNeighbours, Size minFaceSize, Size maxFaceSize) {
+        super(taskName, applicationController);
 
-    _imageFilePath = imageFilePath;
-    _haarFile = haarFile;
-    _tempFolder = tempFolder;
-    _scaleFactor = scaleFactor;
-    _minNeighbours = minNeighbours;
-    _minFaceSize = minFaceSize;
-    _maxFaceSize = maxFaceSize;
-
-    try {
-      System.out.println("Loading OpenCV");
-      nu.pattern.OpenCV.loadShared();
-      System.out.println("Loaded OpenCV");
-
-      _classifier = new CascadeClassifier(_haarFile.getAbsolutePath());
-      _initialized= true;
+        this.imageFilePath = imageFilePath;
+        this.haarFile = haarFile;
+        this.tempFolder = tempFolder;
+        this.scaleFactor = scaleFactor;
+        this.minNeighbours = minNeighbours;
+        this.minFaceSize = minFaceSize;
+        this.maxFaceSize = maxFaceSize;
+        OpenCV.loadShared();
+        this.classifier = new CascadeClassifier(this.haarFile.getAbsolutePath());
+        this.initialized = true;
     }
-    catch (Exception err){
-      System.out.println("Failed to load OpenCV");
-    }
-  }
 
-  @Override
-  protected List<File> runTask() {
-    List<File> faceList = new ArrayList<>();
+    @Override
+    protected List<File> runTask() {
+        List<File> faceList = new ArrayList<>();
+        MatOfRect matFaceList = new MatOfRect();
 
-    MatOfRect matFaceList = new MatOfRect();
+        Mat image = Imgcodecs.imread(this.imageFilePath.getAbsolutePath());
+        this.classifier.detectMultiScale(image, matFaceList, this.scaleFactor, this.minNeighbours, 0, this.minFaceSize, this.maxFaceSize);
 
-    Mat image = Imgcodecs.imread(_imageFilePath.getAbsolutePath());
-    if (image.empty()) return faceList;
+        if (!matFaceList.empty()) {
+            int i = 0;
+            for (Rect faceRectangle : matFaceList.toArray()) {
+                Mat faceImage = image.submat(faceRectangle);
+                String fileName = this.tempFolder + "\\Facethis." + i + ".jpg";
+                Imgcodecs.imwrite(fileName, faceImage);
+                faceList.add(new File(fileName));
 
-    _classifier.detectMultiScale(image,matFaceList,_scaleFactor,_minNeighbours,0,_minFaceSize,_maxFaceSize);
+                updateMessage(fileName);
+                i++;
 
-    if (!matFaceList.empty()) {
-      int i=0;
-      for (Rect faceRectangle : matFaceList.toArray()) {
-        Mat faceImage = image.submat(faceRectangle);
-        String fileName = _tempFolder + "\\Face_" + i + ".jpg";
-        Imgcodecs.imwrite(fileName, faceImage);
-        faceList.add(new File(fileName));
-
-        updateMessage(fileName);
-        i++;
-
-        try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          throw new RuntimeException(e);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
-      }
-    }
 
-    updateValue(faceList);
-    return faceList;
-  }
+        updateValue(faceList);
+        return faceList;
+    }
 }

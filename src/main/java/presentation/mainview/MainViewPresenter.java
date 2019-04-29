@@ -1,120 +1,117 @@
 package presentation.mainview;
 
+import views.controls.events.IOnRecognizeEventListener;
+import views.controls.events.IOnTrainEventListener;
+import views.controls.FaceControlView;
 import core.math.EuclideanDistance;
 import core.tasks.CreateInputVectorTask;
 import core.tasks.ExtractFacesFromImageTask;
-import presentation.IApplicationController;
-import presentation.models.PersonModel;
-import View.Controls.Events.IOnRecognizeEventListener;
-import View.Controls.Events.IOnTrainEventListener;
-import View.Controls.FaceControlView;
+import core.tasks.ExtractFacesFromImageTaskBuilder;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.opencv.core.Size;
+import presentation.IApplicationController;
+import presentation.models.PersonModel;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainViewPresenter implements IMainViewPresenter, IOnTrainEventListener, IOnRecognizeEventListener {
-  private final IMainView _view;
-  private final IApplicationController _applicationController;
+    private final IMainView view;
+    private final IApplicationController applicationController;
 
-  private SimpleStringProperty _message;
+    private SimpleStringProperty message;
 
-  private List<PersonModel> _trainList;
+    private List<PersonModel> trainList;
 
-  private CreateInputVectorTask _createInputVector;
+    private CreateInputVectorTask createInputVector;
 
-  private EuclideanDistance _distance;
+    private EuclideanDistance distance;
 
-  public MainViewPresenter(IMainView view, IApplicationController applicationController){
-    _view = view;
-    _view.setPresenter(this);
-    _applicationController = applicationController;
+    public MainViewPresenter(IMainView view, IApplicationController applicationController) {
+        this.view = view;
+        this.view.setPresenter(this);
+        this.applicationController = applicationController;
 
-    _createInputVector =new CreateInputVectorTask();
+        System.out.println("Loading DL4J");
+        createInputVector = new CreateInputVectorTask();
+        System.out.println("Loaded DL4J");
 
-    _trainList = new ArrayList<>();
+        this.trainList = new ArrayList<>();
+        distance = new EuclideanDistance();
+        message = new SimpleStringProperty();
+        message.addListener((observable, oldValue, newValue) -> {
+            System.out.println("Extracted Face Location: " + newValue);
+            if (newValue.trim().length() == 0)
+                return;
 
-    _distance = new EuclideanDistance();
-
-    _message = new SimpleStringProperty();
-    _message.addListener(new ChangeListener<String>() {
-      @Override
-      public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-        System.out.println("Extracted Face Location: " + newValue);
-        if (newValue.trim().length()==0)
-          return;
-
-        FaceControlView faceControlView = new FaceControlView();
-        faceControlView.setImage(new File(newValue));
-        faceControlView.addOnTrainListener((IOnTrainEventListener)_view.getPresenter());
-        faceControlView.addOnRecognizeListener((IOnRecognizeEventListener)_view.getPresenter());
-
-        Platform.runLater(new Runnable() {
-          @Override public void run() {
-            _view.addFaceControlView(faceControlView);
-          }
+            FaceControlView faceControlView = new FaceControlView();
+            faceControlView.setImage(new File(newValue));
+            faceControlView.addOnTrainListener((IOnTrainEventListener) view.getPresenter());
+            faceControlView.addOnRecognizeListener((IOnRecognizeEventListener) view.getPresenter());
+            Platform.runLater(() -> view.addFaceControlView(faceControlView));
         });
-
-      }
-    });
-  }
-
-  @Override
-  public IMainView getView() {
-    return _view;
-  }
-
-  @Override
-  public void extractFaces(File imageFilePath) {
-    _view.clearFaces();
-    ExtractFacesFromImageTask extractFacesFromImageTask = new ExtractFacesFromImageTask("Extract Faces",_applicationController,
-        imageFilePath,new File("C:\\JAVA\\Face Detection\\haarcascade_frontalface_alt.xml"),new File("C:\\JAVA\\Face Detection\\Temp"),
-        1.05,7,new Size(10,10), new Size(200,200));
-
-    _message.bind(extractFacesFromImageTask.messageProperty());
-
-    new Thread(extractFacesFromImageTask).start();
-  }
-
-  @Override
-  public File showFileDialogChooser() {
-    return _applicationController.showChooseImageView();
-  }
-
-  @Override
-  public void onTrain(String personName, File faceImageFile) {
-    System.out.println("Train: " + faceImageFile.getName());
-
-      double[] faceFeatureArray = _createInputVector.runTask(faceImageFile);
-      PersonModel objPersonModel = new PersonModel(personName,faceFeatureArray);
-      _trainList.add(objPersonModel);
-  }
-
-  @Override
-  public void onRecognize(FaceControlView sender, File personImageFile) {
-    System.out.println("Recognize: " + personImageFile.getName());
-    double[] faceFeatureArray = _createInputVector.runTask(personImageFile);
-    INDArray array1 = Nd4j.create(faceFeatureArray);
-
-    double minimalDistance = Double.MAX_VALUE;
-    String result = "";
-    for(PersonModel personModel : _trainList)
-    {
-      INDArray array2 = Nd4j.create(personModel.get_faceFeatureArray());
-      double distance = _distance.run(array1,array2);
-      if (distance<minimalDistance){
-        minimalDistance = distance;
-        result = personModel.get_personName();
-      }
     }
 
-    sender.setPersonName(result);
-  }
+    @Override
+    public IMainView getView() {
+        return view;
+    }
+
+    @Override
+    public void extractFaces(File imageFilePath) {
+        view.clearFaces();
+        ExtractFacesFromImageTask extractFacesFromImageTask = new ExtractFacesFromImageTaskBuilder()
+                .setTaskName("Extract Faces")
+                .setApplicationController(applicationController)
+                .setImageFilePath(imageFilePath)
+//                .setHaarFile(new File("C:\\JAVA\\Face Detection\\haarcascadefrontalfacealt.xml"))
+//                .setTempFolder(new File("C:\\JAVA\\Face Detection\\Temp"))
+                .setScaleFactor(1.05)
+                .setMinNeighbours(7)
+                .setMinFaceSize(new Size(10, 10))
+                .setMaxFaceSize(new Size(200, 200))
+                .createExtractFacesFromImageTask();
+
+        message.bind(extractFacesFromImageTask.messageProperty());
+
+        new Thread(extractFacesFromImageTask).start();
+    }
+
+    @Override
+    public File showFileDialogChooser() {
+        return applicationController.showChooseImageView();
+    }
+
+    @Override
+    public void onTrain(String personName, File faceImageFile) {
+        System.out.println("Train: " + faceImageFile.getName());
+
+        double[] faceFeatureArray = createInputVector.runTask(faceImageFile);
+        PersonModel objPersonModel = new PersonModel(personName, faceFeatureArray);
+        trainList.add(objPersonModel);
+    }
+
+    @Override
+    public void onRecognize(FaceControlView sender, File personImageFile) {
+        System.out.println("Recognize: " + personImageFile.getName());
+        double[] faceFeatureArray = createInputVector.runTask(personImageFile);
+        INDArray array1 = Nd4j.create(faceFeatureArray);
+
+        double minimalDistance = Double.MAX_VALUE;
+        String result = "";
+        for (PersonModel personModel : trainList) {
+            INDArray array2 = Nd4j.create(personModel.getFaceFeatureArray());
+            double distance = this.distance.run(array1, array2);
+            if (distance < minimalDistance) {
+                minimalDistance = distance;
+                result = personModel.getPersonName();
+            }
+        }
+
+        sender.setPersonName(result);
+    }
 }

@@ -1,6 +1,6 @@
-package View.Controls.Events;
+package views.controls.events;
 
-import View.Controls.FaceControlView;
+import views.controls.FaceControlView;
 
 import java.io.File;
 
