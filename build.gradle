@@ -19,6 +19,7 @@ dependencies {
     compile "org.nd4j:nd4j-native-platform:0.9.1"
     compile "org.deeplearning4j:deeplearning4j-core:0.9.1"
     compile "org.deeplearning4j:deeplearning4j-zoo:0.9.1"
-    compile "org.openpnp:opencv:3.2.0-1"
+// https://mvnrepository.com/artifact/org.openpnp/opencv
+    compile group: 'org.openpnp', name: 'opencv', version: '3.4.2-1'
 
 }
