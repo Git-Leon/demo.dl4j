@@ -51,7 +51,6 @@ public class ExtractFacesFromImageTask extends BaseTask<List<File>> {
 
         Mat image = Imgcodecs.imread(this.imageFilePath.getAbsolutePath());
         this.classifier.detectMultiScale(image, matFaceList, this.scaleFactor, this.minNeighbours, 0, this.minFaceSize, this.maxFaceSize);
-
         if (!matFaceList.empty()) {
             int i = 0;
             for (Rect faceRectangle : matFaceList.toArray()) {
@@ -62,12 +61,6 @@ public class ExtractFacesFromImageTask extends BaseTask<List<File>> {
 
                 updateMessage(fileName);
                 i++;
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
             }
         }
 

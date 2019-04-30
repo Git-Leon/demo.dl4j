@@ -20,18 +20,8 @@ public class FaceControlView extends AnchorPane {
     private ImageView _imageView;
     private TextField _txtPersonName;
     private File _faceImageFile;
-
     private List<IOnTrainEventListener> _trainEventList;
-
-    public void addOnTrainListener(IOnTrainEventListener listener) {
-        _trainEventList.add(listener);
-    }
-
     private List<IOnRecognizeEventListener> _recognizeEventList;
-
-    public void addOnRecognizeListener(IOnRecognizeEventListener listener) {
-        _recognizeEventList.add(listener);
-    }
 
     public FaceControlView() {
         _trainEventList = new ArrayList<>();
@@ -82,6 +72,14 @@ public class FaceControlView extends AnchorPane {
         this.getChildren().add(_txtPersonName);
         this.getChildren().add(btnTrain);
         this.getChildren().add(btnRecognize);
+    }
+
+    public void addOnTrainListener(IOnTrainEventListener listener) {
+        _trainEventList.add(listener);
+    }
+
+    public void addOnRecognizeListener(IOnRecognizeEventListener listener) {
+        _recognizeEventList.add(listener);
     }
 
     public void setImage(File imageFilePath) {
