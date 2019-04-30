@@ -69,7 +69,7 @@ public class MainViewPresenter implements IMainViewPresenter, IOnTrainEventListe
                 .setApplicationController(applicationController)
                 .setImageFilePath(imageFilePath)
                 .setHaarFile(new File(System.getProperty("user.dir") + "/haarcascadefrontalfacealt.xml"))
-                .setTempFolder(new File(System.getProperty("user.dir") + "/Temp"))
+                .setTempFolder(new File(System.getProperty("user.dir") + "/src/main/resources"))
                 .setScaleFactor(1.05)
                 .setMinNeighbours(7)
                 .setMinFaceSize(new Size(10, 10))
