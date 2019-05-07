@@ -11,9 +11,12 @@
 
 ### Installing HomeBrew
 
+
 ### Installing OpenCV
 * `brew` an installation of `opencv` version 3.
     * `brew install opencv@3`
+    * Should you have difficulties finding the correct HomeBrew formula, I have provided you with an exact copy [here](gist.github.com/git-leon/opencv.rb)
+
 * Edit _OpenCV formula_ to enable java support.
     * `brew edit opencv`
         * change property from `-DBUILD_opencv_java=OFF` to `-DBUILD_opencv_java=ON`
