@@ -15,7 +15,7 @@
 ### Installing OpenCV
 * `brew` an installation of `opencv` version 3.
     * `brew install opencv@3`
-    * Should you have difficulties finding the correct HomeBrew formula, I have provided you with an exact copy [here](gist.github.com/git-leon/d69f62f72b825d7594ef7fa92c408498)
+    * Should you have difficulties finding the correct HomeBrew formula, I have provided you with an exact copy [here](https://gist.github.com/Git-Leon/d69f62f72b825d7594ef7fa92c408498)
 
 * Edit _OpenCV formula_ to enable java support.
     * `brew edit opencv`
