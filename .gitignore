@@ -105,5 +105,5 @@ gradle-app.setting
 **/build/
 target/
 gradle/
-
+haarcascade_frontalface_alt.xml
 # End of https://www.gitignore.io/api/gradle,intellij
