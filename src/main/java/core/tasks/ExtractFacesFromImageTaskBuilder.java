@@ -1,6 +1,6 @@
 package core.tasks;
 
-import org.opencv.core.Size;
+import org.bytedeco.javacpp.opencv_core;
 import presentation.IApplicationController;
 
 import java.io.File;
@@ -13,8 +13,8 @@ public class ExtractFacesFromImageTaskBuilder {
     private File tempFolder;
     private double scaleFactor;
     private int minNeighbours;
-    private Size minFaceSize;
-    private Size maxFaceSize;
+    private opencv_core.Size minFaceSize;
+    private opencv_core.Size maxFaceSize;
 
     public ExtractFacesFromImageTaskBuilder() {
     }
@@ -54,12 +54,12 @@ public class ExtractFacesFromImageTaskBuilder {
         return this;
     }
 
-    public ExtractFacesFromImageTaskBuilder setMinFaceSize(Size minFaceSize) {
+    public ExtractFacesFromImageTaskBuilder setMinFaceSize(opencv_core.Size minFaceSize) {
         this.minFaceSize = minFaceSize;
         return this;
     }
 
-    public ExtractFacesFromImageTaskBuilder setMaxFaceSize(Size maxFaceSize) {
+    public ExtractFacesFromImageTaskBuilder setMaxFaceSize(opencv_core.Size maxFaceSize) {
         this.maxFaceSize = maxFaceSize;
         return this;
     }

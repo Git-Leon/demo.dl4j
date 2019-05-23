@@ -27,7 +27,6 @@ public class CreateInputVectorTask {
         nativeImageLoader = new NativeImageLoader(224, 224, 3);
         scaler = new VGG16ImagePreProcessor();
         isInitialized = true;
-
     }
 
     public double[] runTask(File faceImageFile) {
@@ -58,12 +57,10 @@ public class CreateInputVectorTask {
         return result;
     }
 
+
     private ComputationGraph getObjComputationGraph() {
-        try {
-            PretrainedType pretrainedType = PretrainedType.VGGFACE;
-            VGG16 vgg16 = new VGG16();
-            ComputationGraph computationGraph = (ComputationGraph) vgg16.initPretrained(pretrainedType);
-            return computationGraph;
+        try { // TODO - Execute as separate thread
+            return (ComputationGraph) new VGG16().initPretrained(PretrainedType.VGGFACE);
         } catch (IOException e) {
             throw new Error(e);
         }

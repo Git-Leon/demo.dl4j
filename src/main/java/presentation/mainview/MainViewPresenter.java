@@ -1,19 +1,20 @@
 package presentation.mainview;
 
-import views.controls.events.IOnRecognizeEventListener;
-import views.controls.events.IOnTrainEventListener;
-import views.controls.FaceControlView;
+import com.github.gitleon.opencvdemo.utils.CascadeClassifierFactory;
 import core.math.EuclideanDistance;
 import core.tasks.CreateInputVectorTask;
 import core.tasks.ExtractFacesFromImageTask;
 import core.tasks.ExtractFacesFromImageTaskBuilder;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
+import org.bytedeco.javacpp.opencv_core;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
-import org.opencv.core.Size;
 import presentation.IApplicationController;
 import presentation.models.PersonModel;
+import views.controls.FaceControlView;
+import views.controls.events.IOnRecognizeEventListener;
+import views.controls.events.IOnTrainEventListener;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -68,12 +69,12 @@ public class MainViewPresenter implements IMainViewPresenter, IOnTrainEventListe
                 .setTaskName("Extract Faces")
                 .setApplicationController(applicationController)
                 .setImageFilePath(imageFilePath)
-                .setHaarFile(new File(System.getProperty("user.dir") + "/haarcascadefrontalfacealt.xml"))
+                .setHaarFile(new File(CascadeClassifierFactory.FRONTALFACE_ALT.getFullPath()))
                 .setTempFolder(new File(System.getProperty("user.dir") + "/src/main/resources"))
                 .setScaleFactor(1.05)
                 .setMinNeighbours(7)
-                .setMinFaceSize(new Size(10, 10))
-                .setMaxFaceSize(new Size(200, 200))
+                .setMinFaceSize(new opencv_core.Size(10, 10))
+                .setMaxFaceSize(new opencv_core.Size(200, 200))
                 .createExtractFacesFromImageTask();
 
         message.bind(extractFacesFromImageTask.messageProperty());

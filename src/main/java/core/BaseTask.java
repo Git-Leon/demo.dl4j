@@ -4,24 +4,24 @@ import presentation.IApplicationController;
 import javafx.concurrent.Task;
 
 public abstract class BaseTask<T> extends Task<T> {
-  protected final IApplicationController _applicationController;
-  protected String _taskName;
+  protected final IApplicationController applicationController;
+  protected String taskName;
 
   public BaseTask(String taskName, IApplicationController applicationController){
-    _taskName = taskName;
-    _applicationController = applicationController;
+    this.taskName = taskName;
+    this.applicationController = applicationController;
   }
 
   @Override
   protected T call() throws Exception {
     T result = null;
     try{
-      System.out.println("Running task: " + _taskName);
+      System.out.println("Running task: " + taskName);
       result = runTask();
-      System.out.println("Task: " + _taskName + " done");
+      System.out.println("Task: " + taskName + " done");
     }
     catch (Exception err) {
-      System.out.println("Running task: " + _taskName + " Error: " + err.getMessage());
+      System.out.println("Running task: " + taskName + " Error: " + err.getMessage());
     }
     return result;
   }

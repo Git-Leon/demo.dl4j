@@ -2,11 +2,15 @@ group 'org.vp.Face'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'maven'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://packagecloud.io/git-leon/utils/maven2"
+    }
 }
 
 dependencies {
@@ -15,11 +19,12 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
     compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.11.2'
 
-
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     compile "org.nd4j:nd4j-native-platform:0.9.1"
     compile "org.deeplearning4j:deeplearning4j-core:0.9.1"
     compile "org.deeplearning4j:deeplearning4j-zoo:0.9.1"
-// https://mvnrepository.com/artifact/org.openpnp/opencv
-    compile group: 'org.openpnp', name: 'opencv', version: '3.4.2-1'
+    compile 'com.github.git-leon:opencvl:1.0'
+//    compile group: 'org.openpnp', name: 'opencv', version: '3.4.2-1'
+//    compile group: 'org.bytedeco', name: 'javacpp', version: '1.4'
 
 }

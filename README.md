@@ -24,5 +24,7 @@
     * `brew install --build-from-source opencv`
 
 ### Checking OpenCV java installation
+* Ensure you've brewed correctly
+    * `brew info opencv3`
 * Ensure a version of OpenCV can be found in your local machine directory. (Edit the directory version)
     * `/usr/local/Cellar/opencv/3.x.x/share/OpenCV/java/`
